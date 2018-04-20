@@ -1,0 +1,206 @@
+.animated {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+}
+
+@keyframes create {
+    from {
+        transform: scale3d(0, 0, 0);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.create {
+    animation-duration: 0.3s;
+    animation-name: create;
+}
+
+@keyframes change {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    50% {
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.change {
+    animation-duration: 0.3s;
+    animation-name: change;
+}
+
+@keyframes scoreOut {
+    from {
+      opacity: 1;
+    }  
+    to {
+      opacity: 0;
+      transform: translate3d(0, -200%, 0);
+    }
+  }
+  
+.scoreOut {
+    animation-duration: 0.8s;
+    animation-name: scoreOut;
+}
+
+@keyframes moveDown1 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 5.5rem, 0);
+    }
+}
+
+.moveDown1 {
+    animation-name: moveDown1;
+}
+
+@keyframes moveDown2 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 11rem, 0);
+    }
+}
+
+.moveDown2 {
+    animation-name: moveDown2;
+}
+
+@keyframes moveDown3 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 16.5rem, 0);
+    }
+}
+
+.moveDown3 {
+    animation-name: moveDown3;
+}
+
+@keyframes moveUp1 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -5.5rem, 0);
+    }
+}
+
+.moveUp1 {
+    animation-name: moveUp1;
+}
+
+@keyframes moveUp2 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -11rem, 0);
+    }
+}
+
+.moveUp2 {
+    animation-name: moveUp2;
+}
+
+@keyframes moveUp3 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -16.5rem, 0);
+    }
+}
+
+.moveUp3 {
+    animation-name: moveUp3;
+}
+
+@keyframes moveLeft1 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-5.25rem, 0, 0);
+    }
+}
+
+.moveLeft1 {
+    animation-name: moveLeft1;
+}
+
+@keyframes moveLeft2 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-10.65rem, 0, 0);
+    }
+}
+
+.moveLeft2 {
+    animation-name: moveLeft2;
+}
+
+@keyframes moveLeft3 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-16rem, 0, 0);
+    }
+}
+
+.moveLeft3 {
+    animation-name: moveLeft3;
+}
+
+@keyframes moveRight1 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(5.25rem, 0, 0);
+    }
+}
+
+.moveRight1 {
+    animation-name: moveRight1;
+}
+
+@keyframes moveRight2 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(10.65rem, 0, 0);
+    }
+}
+
+.moveRight2 {
+    animation-name: moveRight2;
+}
+
+@keyframes moveRight3 {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(16rem, 0, 0);
+    }
+}
+
+.moveRight3 {
+    animation-name: moveRight3;
+}
