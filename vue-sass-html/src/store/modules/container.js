@@ -28,12 +28,14 @@ const state = {
   best: 0,
   mainClasses: '',
   gameOverClass: '',
-  successClasses: ''
+  successClasses: '',
+  startX: 0,
+  startY: 0
 }
 
-  if (localStorage.best) {
-    state.best = localStorage.best
-  }
+if (localStorage.best) {
+  state.best = localStorage.best
+}
 
 
 const getters = {
@@ -57,6 +59,18 @@ const actions = {
     commit
   }, event) {
     commit('keyup', event)
+  },
+  touchend({
+    commit
+  }, event) {
+    commit('touchend', event)
+  },
+  touchstart({
+    commit
+  }, event) {
+    console.log(event);
+    
+    commit('touchstart', event)
   }
 }
 
@@ -129,7 +143,7 @@ const mutations = {
       }
     }
     state.current = 0;
-    state.stop = false    
+    state.stop = false
     state.mainClasses = ''
     state.gameOverClass = ''
     state.successClasses = ''
@@ -141,6 +155,50 @@ const mutations = {
     state.stop = false
     state.successClasses = ''
     state.mainClasses = ''
+  },
+  touchstart(state,event) {
+    if (state.stop) return
+    
+    state.startX = event.touches[0].pageX
+    state.startY = event.touches[0].pageY;　　
+    event.preventDefault();　
+  },
+  touchend(state,event) {　　　　
+    if (state.stop) return
+    if (new Date() - state.time < 300) return
+         
+    state.time = new Date()
+    event.preventDefault();　　　　
+    var moveEndX = event.changedTouches[0].pageX
+    var moveEndY = event.changedTouches[0].pageY
+    var x = moveEndX - state.startX
+    var y = moveEndY - state.startY
+    var falg = false
+    if (x == 0 && y == 0) return
+    else if (x > 0) {
+
+      if (y / x > 1) falg = goDown(state)
+      else if (y / x < -1) falg = goUp(state)
+      else falg = goRight(state)
+
+    } else if (x < 0) {
+
+      if (y / x > 1) falg = goUp(state)
+      else if (y / x < -1) falg = goDown(state)
+      else falg = goLeft(state)
+
+    } else if (x == 0) {
+
+      if (y > 0) falg = goUp(state)
+      else if (y < 0) falg = goDown(state)
+    }
+    var self = this
+    if (falg) {
+      setTimeout(() => {
+        this.commit('random')
+        gameOver(state)
+      }, 300)
+    }
   }
 }
 

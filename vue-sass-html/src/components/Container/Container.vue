@@ -1,5 +1,5 @@
 <template>
-    <div id="container">
+    <div id="container" @touchstart="touchstart" @touchend='touchend'>
         <div class="gameOver" :class="gameOverClass">
             Game Over
             <div class="tryAgain" @click="newGame">
@@ -57,7 +57,7 @@ export default {
     ...mapGetters(["data",'mainClasses','gameOverClass','successClasses'])
   },
   methods: {
-    ...mapMutations(["random", "keyup",'newGame','contine'])
+    ...mapMutations(["random", "keyup",'newGame','contine','touchend',,'touchstart'])
   },
   mounted() {
     var self = this;
