@@ -69,7 +69,7 @@ const actions = {
     commit
   }, event) {
     console.log(event);
-    
+
     commit('touchstart', event)
   }
 }
@@ -156,17 +156,17 @@ const mutations = {
     state.successClasses = ''
     state.mainClasses = ''
   },
-  touchstart(state,event) {
+  touchstart(state, event) {
     if (state.stop) return
-    
+
     state.startX = event.touches[0].pageX
     state.startY = event.touches[0].pageY;　　
     event.preventDefault();　
   },
-  touchend(state,event) {　　　　
+  touchend(state, event) {　　　　
     if (state.stop) return
     if (new Date() - state.time < 300) return
-         
+
     state.time = new Date()
     event.preventDefault();　　　　
     var moveEndX = event.changedTouches[0].pageX

@@ -54,10 +54,17 @@ import { mapGetters, mapMutations } from "vuex";
 export default {
   components: { Item },
   computed: {
-    ...mapGetters(["data",'mainClasses','gameOverClass','successClasses'])
+    ...mapGetters(["data", "mainClasses", "gameOverClass", "successClasses"])
   },
   methods: {
-    ...mapMutations(["random", "keyup",'newGame','contine','touchend',,'touchstart'])
+    ...mapMutations([
+      "random",
+      "keyup",
+      "newGame",
+      "contine",
+      "touchend",
+      "touchstart"
+    ])
   },
   mounted() {
     var self = this;
