@@ -1,7 +1,7 @@
 /**
  * 当点击a 和 左方向键后需要执行的函数
  * @method goLeft
- * @param {object} mainData:程序中的所有数据  
+ * @param {object} state:程序中的所有数据  
  * @return {无} 
  */
 function goLeft(state) {
@@ -35,7 +35,7 @@ function goLeft(state) {
 /**
  * 当点击d 和 右方向键后需要执行的函数
  * @method goRight
- * @param {object} mainData:程序中的所有数据  
+ * @param {object} state:程序中的所有数据  
  * @return {无} 
  */
 function goRight(state) {
@@ -68,7 +68,7 @@ function goRight(state) {
 /**
  * 当点击s 和 下方向键后需要执行的函数
  * @method goUp
- * @param {object} mainData:程序中的所有数据  
+ * @param {object} state:程序中的所有数据  
  * @return {无} 
  */
 function goUp(state) {
@@ -102,7 +102,7 @@ function goUp(state) {
 /**
  * 当点击w 和 上方向键后需要执行的函数
  * @method goDown
- * @param {object} mainData:程序中的所有数据  
+ * @param {object} state:程序中的所有数据  
  * @return {无} 
  */
 function goDown(state) {
